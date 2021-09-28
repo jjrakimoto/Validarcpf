@@ -32,8 +32,8 @@ namespace Validarcpf
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.lblresul = new System.Windows.Forms.Label();
+            this.txtcpf = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -65,31 +65,37 @@ namespace Validarcpf
             this.button1.TabIndex = 4;
             this.button1.Text = "Validar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label3
+            // lblresul
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(200, 206);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(360, 155);
-            this.label3.TabIndex = 5;
+            this.lblresul.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.lblresul.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblresul.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblresul.Location = new System.Drawing.Point(200, 206);
+            this.lblresul.Name = "lblresul";
+            this.lblresul.Size = new System.Drawing.Size(360, 155);
+            this.lblresul.TabIndex = 5;
+            this.lblresul.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblresul.Click += new System.EventHandler(this.lblresul_Click);
             // 
-            // maskedTextBox1
+            // txtcpf
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(268, 112);
-            this.maskedTextBox1.Mask = "000,000,000-00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(217, 23);
-            this.maskedTextBox1.TabIndex = 6;
+            this.txtcpf.Location = new System.Drawing.Point(268, 112);
+            this.txtcpf.Mask = "000,000,000-00";
+            this.txtcpf.Name = "txtcpf";
+            this.txtcpf.Size = new System.Drawing.Size(217, 23);
+            this.txtcpf.TabIndex = 6;
+            this.txtcpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // Form1
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(752, 450);
+            this.Controls.Add(this.txtcpf);
+            this.Controls.Add(this.lblresul);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -105,8 +111,8 @@ namespace Validarcpf
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label lblresul;
+        private System.Windows.Forms.MaskedTextBox txtcpf;
     }
 }
 
